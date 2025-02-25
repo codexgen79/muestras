@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios de Diseño Web & Consultoría IA | Tu Nombre</title>
+    
+    <!-- Meta tags SEO -->
+    <meta name="description" content="Servicios profesionales de diseño web con WordPress, desarrollo web personalizado, consultoría en IA generativa y cursos de diseño web. Soluciones digitales innovadoras para tu negocio.">
+    <meta name="keywords" content="diseño web, wordpress, desarrollo web, consultoría IA, cursos diseño web">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Servicios de Diseño Web & Consultoría IA">
+    <meta property="og:description" content="Servicios profesionales de diseño web y consultoría en IA generativa">
+    <meta property="og:image" content="URL-de-tu-imagen">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Estilos personalizados -->
+    <style>
+        :root {
+            --primary-color: #0A192F;
+            --secondary-color: #1F2937;
+            --accent-color: #D4AF37;
+            --text-color: #E5E7EB;
+            --text-muted: #9CA3AF;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--primary-color);
+            color: var(--text-color);
+        }
+
+        /* Navbar personalizado */
+        .navbar {
+            background: rgba(10, 25, 47, 0.95);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand, .nav-link {
+            color: var(--text-color) !important;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-color) !important;
+        }
+
+        /* Hero Section */
+        .hero-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            z-index: -2;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 25, 47, 0.85);
+            z-index: -1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Servicios Cards */
+        .service-card {
+            background: var(--secondary-color);
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+            height: 100%;
+            padding: 2rem;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-icon {
+            color: var(--accent-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Sobre Mí */
+        .sobre-mi {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: var(--text-color);
+        }
+
+        .sobre-mi .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 25, 47, 0.85); /* Color oscuro semi-transparente */
+            z-index: 1;
+        }
+
+        .sobre-mi .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .sobre-mi .experiencia-item {
+            background: rgba(31, 41, 55, 0.8); /* Fondo semi-transparente para las tarjetas */
+            backdrop-filter: blur(10px);
+        }
+
+        .experiencia-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .experiencia-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .experiencia-item .service-icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .experiencia-item h4 {
+            color: var(--text-color);
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .experiencia-item p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .experiencia-item {
+                margin-bottom: 1rem;
+            }
+            .sobre-mi {
+                background-attachment: scroll; /* Mejor rendimiento en móviles */
+            }
+        }
+
+        /* Contacto */
+        .btn-contacto {
+            background: var(--accent-color);
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-contacto:hover {
+            transform: translateY(-3px);
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-color);
+            color: var(--text-muted);
+        }
+
+        .testimoniales {
+            background: var(--primary-color);
+            position: relative;
+        }
+
+        .testimonial-card {
+            background: var(--secondary-color);
+            border-radius: 15px;
+            padding: 2rem;
+            height: 100%;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .testimonial-content {
+            position: relative;
+        }
+
+        .testimonial-content i {
+            color: var(--accent-color);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-content p {
+            color: var(--text-color);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid var(--accent-color);
+        }
+
+        .testimonial-author h5 {
+            color: var(--accent-color);
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .testimonial-author span {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .testimonial-card {
+                margin-bottom: 1rem;
+            }
+        }
+
+        /* Estilos para el carrusel infinito */
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 40px;
+            height: 40px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.7;
+        }
+
+        .carousel-control-prev {
+            left: -20px;
+        }
+
+        .carousel-control-next {
+            right: -20px;
+        }
+
+        .carousel-control-prev:hover,
+        .carousel-control-next:hover {
+            opacity: 1;
+        }
+
+        .carousel-indicators {
+            bottom: -50px;
+        }
+
+        .carousel-indicators button {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            opacity: 0.5;
+        }
+
+        .carousel-indicators button.active {
+            opacity: 1;
+        }
+
+        /* Ajuste para dispositivos móviles */
+        @media (max-width: 768px) {
+            .carousel-control-prev {
+                left: 0;
+            }
+            .carousel-control-next {
+                right: 0;
+            }
+        }
+
+        /* Mejorar las transiciones del carrusel */
+        .carousel-item {
+            transition: transform .6s ease-in-out, opacity .5s ease-in-out !important;
+        }
+
+        .carousel-fade .carousel-item {
+            opacity: 0;
+            transition-duration: .6s;
+            transition-property: opacity;
+        }
+
+        .carousel-fade .carousel-item.active,
+        .carousel-fade .carousel-item-next.carousel-item-start,
+        .carousel-fade .carousel-item-prev.carousel-item-end {
+            opacity: 1;
+        }
+
+        .carousel-fade .active.carousel-item-start,
+        .carousel-fade .active.carousel-item-end {
+            opacity: 0;
+        }
+
+        .carousel-fade .carousel-item-next,
+        .carousel-fade .carousel-item-prev,
+        .carousel-fade .carousel-item.active,
+        .carousel-fade .active.carousel-item-start,
+        .carousel-fade .active.carousel-item-prev {
+            transform: translateX(0);
+        }
+
+        .about-me {
+            background-image: url('https://cdn.pixabay.com/photo/2017/06/26/13/03/webdesigner-2443766_1280.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #ffffff;
+            position: relative;
+        }
+
+        .about-me::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .about-me > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .neon-title {
+            color: #FFFFFF;
+            text-shadow: 
+                0 0 5px #fff,
+                0 0 8px #fff,
+                0 0 15px #D4AF37,
+                0 0 25px #D4AF37,
+                0 0 40px #D4AF37;
+            animation: neon-pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes neon-pulse {
+            0% {
+                text-shadow: none;
+                opacity: 0.8;
+            }
+            25% {
+                text-shadow: 
+                    0 0 5px #fff,
+                    0 0 8px #fff,
+                    0 0 15px #D4AF37,
+                    0 0 25px #D4AF37,
+                    0 0 40px #D4AF37;
+                opacity: 1;
+            }
+            50% {
+                text-shadow: none;
+                opacity: 0.8;
+            }
+            75% {
+                text-shadow: 
+                    0 0 5px #fff,
+                    0 0 8px #fff,
+                    0 0 15px #D4AF37,
+                    0 0 25px #D4AF37,
+                    0 0 40px #D4AF37;
+                opacity: 1;
+            }
+            100% {
+                text-shadow: none;
+                opacity: 0.8;
+            }
+        }
+
+        /* Versión más suave para móviles */
+        @media (max-width: 768px) {
+            .neon-title {
+                text-shadow: 
+                    0 0 3px #fff,
+                    0 0 6px #fff,
+                    0 0 12px #D4AF37,
+                    0 0 20px #D4AF37;
+            }
+
+            @keyframes neon-pulse {
+                0% {
+                    text-shadow: none;
+                    opacity: 0.8;
+                }
+                25% {
+                    text-shadow: 
+                        0 0 3px #fff,
+                        0 0 6px #fff,
+                        0 0 12px #D4AF37,
+                        0 0 20px #D4AF37;
+                    opacity: 1;
+                }
+                50% {
+                    text-shadow: none;
+                    opacity: 0.8;
+                }
+                75% {
+                    text-shadow: 
+                        0 0 3px #fff,
+                        0 0 6px #fff,
+                        0 0 12px #D4AF37,
+                        0 0 20px #D4AF37;
+                    opacity: 1;
+                }
+                100% {
+                    text-shadow: none;
+                    opacity: 0.8;
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">TuLogo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#servicios">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre-mi">Sobre Mí</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-container">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="https://cdn.pixabay.com/video/2022/10/24/136268-764387688_large.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1 class="display-3 fw-bold mb-4 neon-title" data-aos="fade-up">Soluciones Digitales Innovadoras</h1>
+            <p class="lead" data-aos="fade-up" data-aos-delay="200">Transformamos tu visión en experiencias digitales excepcionales</p>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Nuestros Servicios</h2>
+            <div class="row g-4">
+                <!-- WordPress -->
+                <div class="col-md-6 col-lg-3" data-aos="flip-left">
+                    <div class="service-card">
+                        <i class="fas fa-wordpress service-icon"></i>
+                        <h3 class="h4 mb-3">WordPress</h3>
+                        <p>Creamos sitios web profesionales y dinámicos con WordPress, optimizados para rendimiento y SEO.</p>
+                    </div>
+                </div>
+
+                <!-- Diseño Web -->
+                <div class="col-md-6 col-lg-3" data-aos="flip-left" data-aos-delay="200">
+                    <div class="service-card">
+                        <i class="fas fa-code service-icon"></i>
+                        <h3 class="h4 mb-3">Diseño Web</h3>
+                        <p>Desarrollo web personalizado que refleja la esencia de tu marca y crea experiencias únicas.</p>
+                    </div>
+                </div>
+
+                <!-- Consultoría IA -->
+                <div class="col-md-6 col-lg-3" data-aos="flip-left" data-aos-delay="400">
+                    <div class="service-card">
+                        <i class="fas fa-brain service-icon"></i>
+                        <h3 class="h4 mb-3">Consultoría IA</h3>
+                        <p>Asesoramiento experto en implementación de IA generativa y soluciones automatizadas.</p>
+                    </div>
+                </div>
+
+                <!-- Cursos -->
+                <div class="col-md-6 col-lg-3" data-aos="flip-left" data-aos-delay="600">
+                    <div class="service-card">
+                        <i class="fas fa-graduation-cap service-icon"></i>
+                        <h3 class="h4 mb-3">Cursos</h3>
+                        <p>Formación práctica y personalizada en las últimas tecnologías web.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Mí -->
+    <section id="sobre-mi" class="sobre-mi py-5" style="background-image: url('https://cdn.pixabay.com/photo/2017/06/26/13/03/webdesigner-2443766_1280.jpg');">
+        <div class="overlay"></div>
+        <div class="container position-relative">
+            <h2 class="text-center mb-5" data-aos="fade-up">Sobre Mí</h2>
+            
+            <!-- Descripción principal -->
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <p class="lead mb-4" data-aos="fade-up">
+                        Desarrollador web y consultor en IA con más de 5 años de experiencia creando soluciones digitales innovadoras.
+                    </p>
+                    <p data-aos="fade-up" data-aos-delay="200">
+                        Me especializo en crear experiencias web únicas y memorables, combinando diseño elegante con tecnología de vanguardia.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Grid de experiencia -->
+            <div class="row g-4 justify-content-center">
+                <!-- WordPress Expert -->
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in">
+                    <div class="experiencia-item h-100">
+                        <i class="fas fa-check-circle service-icon"></i>
+                        <h4 class="my-3">WordPress Expert</h4>
+                        <p class="mb-0">Desarrollo personalizado y optimización avanzada para sitios WordPress de alto rendimiento.</p>
+                    </div>
+                </div>
+
+                <!-- Consultor IA -->
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="experiencia-item h-100">
+                        <i class="fas fa-lightbulb service-icon"></i>
+                        <h4 class="my-3">Consultor IA</h4>
+                        <p class="mb-0">Implementación estratégica de soluciones con IA generativa para optimizar procesos.</p>
+                    </div>
+                </div>
+
+                <!-- Desarrollo Web -->
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="experiencia-item h-100">
+                        <i class="fas fa-code service-icon"></i>
+                        <h4 class="my-3">Desarrollo Web</h4>
+                        <p class="mb-0">Creación de sitios web responsivos y optimizados con las últimas tecnologías.</p>
+                    </div>
+                </div>
+
+                <!-- Capacitador -->
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="experiencia-item h-100">
+                        <i class="fas fa-chalkboard-teacher service-icon"></i>
+                        <h4 class="my-3">Capacitador</h4>
+                        <p class="mb-0">19 años formando profesionales en tecnologías web y desarrollo digital.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimoniales -->
+    <section id="testimoniales" class="testimoniales py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Lo Que Dicen Nuestros Clientes</h2>
+            
+            <div class="row">
+                <div class="col-12">
+                    <div id="testimonialCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <!-- Indicadores -->
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"></button>
+                        </div>
+
+                        <!-- Contenido del Carrusel -->
+                        <div class="carousel-inner">
+                            <!-- Grupo 1 -->
+                            <div class="carousel-item active">
+                                <div class="row g-4">
+                                    <div class="col-md-4" data-aos="fade-up">
+                                        <div class="testimonial-card">
+                                            <div class="testimonial-content">
+                                                <i class="fas fa-quote-left"></i>
+                                                <p>"La implementación de IA en nuestro negocio ha sido transformadora. El enfoque profesional y la experiencia demostrada superaron nuestras expectativas."</p>
+                                                <div class="testimonial-author">
+                                                    <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="Cliente 1">
+                                                    <div>
+                                                        <h5>Carlos Rodríguez</h5>
+                                                        <span>CEO, TechSolutions</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                                        <div class="testimonial-card">
+                                            <div class="testimonial-content">
+                                                <i class="fas fa-quote-left"></i>
+                                                <p>"Los cursos de diseño web han sido fundamentales para nuestro equipo. La metodología práctica y el contenido actualizado nos permitieron mejorar significativamente."</p>
+                                                <div class="testimonial-author">
+                                                    <img src="https://randomuser.me/api/portraits/women/41.jpg" alt="Cliente 2">
+                                                    <div>
+                                                        <h5>Ana Martínez</h5>
+                                                        <span>Directora de Marketing</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                                        <div class="testimonial-card">
+                                            <div class="testimonial-content">
+                                                <i class="fas fa-quote-left"></i>
+                                                <p>"El rediseño de nuestro sitio WordPress no solo mejoró nuestra imagen, sino que también incrementó significativamente nuestras conversiones."</p>
+                                                <div class="testimonial-author">
+                                                    <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="Cliente 3">
+                                                    <div>
+                                                        <h5>Miguel Sánchez</h5>
+                                                        <span>Emprendedor Digital</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Grupo 2 -->
+                            <div class="carousel-item">
+                                <div class="row g-4">
+                                    <div class="col-md-4" data-aos="fade-up">
+                                        <div class="testimonial-card">
+                                            <div class="testimonial-content">
+                                                <i class="fas fa-quote-left"></i>
+                                                <p>"La consultoría en IA nos abrió nuevas posibilidades de negocio. El acompañamiento y la implementación fueron excepcionales."</p>
+                                                <div class="testimonial-author">
+                                                    <img src="https://randomuser.me/api/portraits/women/42.jpg" alt="Cliente 4">
+                                                    <div>
+                                                        <h5>Laura Torres</h5>
+                                                        <span>CTO, InnovaTech</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                                        <div class="testimonial-card">
+                                            <div class="testimonial-content">
+                                                <i class="fas fa-quote-left"></i>
+                                                <p>"El desarrollo web personalizado nos permitió destacar en nuestro sector. La atención al detalle y la creatividad fueron excepcionales."</p>
+                                                <div class="testimonial-author">
+                                                    <img src="https://randomuser.me/api/portraits/men/43.jpg" alt="Cliente 5">
+                                                    <div>
+                                                        <h5>David López</h5>
+                                                        <span>Director Creativo</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                                        <div class="testimonial-card">
+                                            <div class="testimonial-content">
+                                                <i class="fas fa-quote-left"></i>
+                                                <p>"La capacitación en tecnologías web transformó completamente nuestro equipo de desarrollo. Ahora somos más eficientes y competitivos."</p>
+                                                <div class="testimonial-author">
+                                                    <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Cliente 6">
+                                                    <div>
+                                                        <h5>Patricia Ruiz</h5>
+                                                        <span>Lead Developer</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Controles -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                            <span class="visually-hidden">Anterior</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                            <span class="visually-hidden">Siguiente</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="py-5">
+        <div class="container text-center">
+            <h2 class="mb-4" data-aos="fade-up">¿Listo para dar el siguiente paso?</h2>
+            <p class="mb-4" data-aos="fade-up" data-aos-delay="200">Conversemos sobre cómo podemos ayudarte a alcanzar tus objetivos digitales.</p>
+            <a href="mailto:codexgen79@gmail.com" class="btn-contacto" data-aos="zoom-in" data-aos-delay="400">
+                <i class="fas fa-envelope me-2"></i>Contáctanos
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-4">
+        <div class="container text-center">
+            <p class="mb-2"><i class="fas fa-envelope me-2"></i>codexgen79@gmail.com</p>
+            <p class="mb-0">&copy; 2025 Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // Inicializar AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Cambiar navbar al hacer scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(10, 25, 47, 0.95)';
+            } else {
+                navbar.style.background = 'rgba(10, 25, 47, 0.7)';
+            }
+        });
+
+        // Inicializar el carrusel con opciones para loop infinito
+        document.addEventListener('DOMContentLoaded', function() {
+            const testimonialCarousel = new bootstrap.Carousel(document.getElementById('testimonialCarousel'), {
+                interval: 3000, // Velocidad del autoplay (3 segundos)
+                ride: 'carousel',
+                wrap: true, // Habilita el loop infinito
+                pause: false, // No se detiene al pasar el mouse
+                touch: true,
+                keyboard: true
+            });
+
+            // Asegurar que el carrusel continúe en loop
+            const carousel = document.getElementById('testimonialCarousel');
+            
+            carousel.addEventListener('slide.bs.carousel', function(e) {
+                // Añadir efecto de fade para transición suave
+                const items = this.querySelectorAll('.carousel-item');
+                items.forEach(item => {
+                    item.style.transition = 'opacity 0.5s ease-in-out';
+                });
+            });
+
+            // Prevenir que el carrusel se detenga
+            carousel.addEventListener('mouseenter', function() {
+                testimonialCarousel._config.interval = 3000; // Mantener el autoplay
+                testimonialCarousel.cycle(); // Forzar ciclo continuo
+            });
+
+            // Asegurar que el carrusel siga funcionando después de interacciones
+            carousel.addEventListener('slid.bs.carousel', function() {
+                testimonialCarousel.cycle(); // Reiniciar ciclo
+            });
+        });
+    </script>
+</body>
+</html>
