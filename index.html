@@ -28,67 +28,6 @@
 
     <!-- Estilos personalizados -->
     <style>
-        .social-links {
-        left: 20px;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 1000;
-    }
-
-    .social-icon {
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        color: #fff;
-        font-size: 20px;
-        transition: all 0.3s ease;
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(5px);
-    }
-
-    /* Facebook */
-    .social-icon.facebook:hover {
-        background: #1877f2;
-        transform: translateX(5px);
-        box-shadow: 0 0 15px rgba(24, 119, 242, 0.5);
-    }
-
-    /* Instagram */
-    .social-icon.instagram:hover {
-        background: #e4405f;
-        transform: translateX(5px);
-        box-shadow: 0 0 15px rgba(228, 64, 95, 0.5);
-    }
-
-    /* TikTok */
-    .social-icon.tiktok:hover {
-        background: #000000;
-        transform: translateX(5px);
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-        .social-links {
-            left: 10px;
-        }
-        
-        .social-icon {
-            width: 35px;
-            height: 35px;
-            font-size: 16px;
-        }
-    }
-</style>
-<!-- FIN ESTILOS REDES SOCIALES -->
-
-
-
-
-        
         :root {
             --primary-color: #0A192F;
             --secondary-color: #1F2937;
@@ -531,6 +470,63 @@
                 }
             }
         }
+
+        /* INICIO ESTILOS REDES SOCIALES */
+        .social-links {
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 20px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        /* Facebook */
+        .social-icon.facebook:hover {
+            background: #1877f2;
+            transform: translateX(5px);
+            box-shadow: 0 0 15px rgba(24, 119, 242, 0.5);
+        }
+
+        /* Instagram */
+        .social-icon.instagram:hover {
+            background: #e4405f;
+            transform: translateX(5px);
+            box-shadow: 0 0 15px rgba(228, 64, 95, 0.5);
+        }
+
+        /* TikTok */
+        .social-icon.tiktok:hover {
+            background: #000000;
+            transform: translateX(5px);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .social-links {
+                left: 10px;
+            }
+            
+            .social-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 16px;
+            }
+        }
+        /* FIN ESTILOS REDES SOCIALES */
     </style>
 </head>
 <body>
@@ -822,44 +818,6 @@
             <p class="mb-2"><i class="fas fa-envelope me-2"></i>codexgen79@gmail.com</p>
             <p class="mb-0">&copy; 2025 Todos los derechos reservados</p>
         </div>
-        <!-- INICIO SECCIÓN REDES SOCIALES -->
-<div class="social-links position-fixed">
-    <ul class="list-unstyled d-flex flex-column gap-3">
-        <!-- Facebook -->
-        <li>
-            <a href="https://www.facebook.com/profile.php?id=100092913327725" 
-               target="_blank" 
-               class="social-icon facebook"
-               data-aos="fade-right"
-               data-aos-delay="100">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-        </li>
-        
-        <!-- Instagram -->
-        <li>
-            <a href="https://www.instagram.com/iaacademiapro/" 
-               target="_blank" 
-               class="social-icon instagram"
-               data-aos="fade-right"
-               data-aos-delay="200">
-                <i class="fab fa-instagram"></i>
-            </a>
-        </li>
-        
-        <!-- TikTok -->
-        <li>
-            <a href="https://www.tiktok.com/@mkx1979" 
-               target="_blank" 
-               class="social-icon tiktok"
-               data-aos="fade-right"
-               data-aos-delay="300">
-                <i class="fab fa-tiktok"></i>
-            </a>
-        </li>
-    </ul>
-</div>
-<!-- FIN SECCIÓN REDES SOCIALES -->
     </footer>
 
     <!-- Bootstrap JS -->
@@ -917,5 +875,44 @@
             });
         });
     </script>
+
+    <!-- INICIO SECCIÓN REDES SOCIALES -->
+    <div class="social-links position-fixed">
+        <ul class="list-unstyled d-flex flex-column gap-3">
+            <!-- Facebook -->
+            <li>
+                <a href="https://www.facebook.com/profile.php?id=100092913327725" 
+                   target="_blank" 
+                   class="social-icon facebook"
+                   data-aos="fade-right"
+                   data-aos-delay="100">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </li>
+            
+            <!-- Instagram -->
+            <li>
+                <a href="https://www.instagram.com/iaacademiapro/" 
+                   target="_blank" 
+                   class="social-icon instagram"
+                   data-aos="fade-right"
+                   data-aos-delay="200">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </li>
+            
+            <!-- TikTok -->
+            <li>
+                <a href="https://www.tiktok.com/@mkx1979" 
+                   target="_blank" 
+                   class="social-icon tiktok"
+                   data-aos="fade-right"
+                   data-aos-delay="300">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- FIN SECCIÓN REDES SOCIALES -->
 </body>
 </html>
